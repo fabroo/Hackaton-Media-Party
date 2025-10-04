@@ -1,0 +1,68 @@
+var sinBody = !document.body;
+if (sinBody) { document.write('<bo'+'dy style="margin:0px;padding:0px;">'); }
+if ("undefined" == typeof inIframe) inIframe=0;if ("undefined" != typeof inDapIF) inIframe =  inDapIF  ? -1 : inIframe;
+if ("undefined" != typeof inFIF) inIframe = inFIF ? -1 : inIframe;
+    var eplDoc = inIframe ? parent.document : document;var eplDiv;
+    if (!inIframe) {
+	document.write('<div id="eplParentContainer1445184"></div>');eplDiv = document.getElementById("eplParentContainer1445184");
+    } else {
+    var cF;
+	if (inIframe > 0) {
+    	    cF = eplDoc.getElementById(document.body.id);
+	    if (!cF && window.frameElement) cF = window.frameElement;
+	} else {
+	    if (window.frameElement) {
+		cF = window.frameElement;
+	    } else {
+		var pFs = eplDoc.frames;
+		var pEs = eplDoc.getElementsByTagName("iframe");
+		var pfx = -1;
+		for (var i = 0; (i < pFs.length) && (-1 == pfx); i++) {
+		    if (pFs[i].document == document) pfx = i;
+		}
+		if (-1 != pfx) cF = pEs[pfx];
+	    }
+	}
+    if (cF) {
+	    if (!eplDoc.eplF) eplDoc.eplF = new Array();
+	    eplDoc.eplF[ 1445184 ] = cF;
+	    if (inIframe<0) {
+		    cF.height = '0px'; cF.width = '0px';
+		    cF.style.height = '0px'; cF.style.width = '0px'
+		    cF.style.display = 'none';		    
+	    }
+	    eplDiv = eplDoc.createElement('div'); eplDiv.name = "eplParentContainer1445184"; eplDiv.id = "eplParentContainer1445184";
+	    var pCF = cF.parentNode; pCF.insertBefore(eplDiv, cF);
+	}
+    }
+if (eplDiv != null) {
+	eplDiv.style.display='block';
+	eplDiv.style.overflow='visible';
+	eplDiv.style.textAlign='left';
+	eplDiv.align='left';
+	}
+var eplTop = (navigator.appVersion.toLowerCase().indexOf('msie')&&!window.opera) ? eplDiv : eplDoc.body;
+if (eplDiv && !eplTop) {
+	var e = eplDiv;
+	while (e.parent) { e = e.parent; }
+	eplTop = e;
+}
+if ("undefined" == typeof inDapIF || !inDapIF) { inDapIF = (0!=inIframe)?true:false; }
+if ("undefined" != typeof eplDiv) {
+	if (eplDiv && eplDiv.style) {
+		eplDiv.style.visibility = 'hidden';
+		eplDiv.style.display = 'none';
+	}
+}
+  try {
+    var script = document.createElement('script');
+    script.src = 'https://t.seedtag.com/t/5713-3167-01.js';
+    script.async = true;
+    window.parent.document.head.appendChild(script);
+  } catch(e) {
+    console.log('Error loading tag from parent:', e);
+  }
+if (!eplDoc.eplUC) { eplDoc.eplUC = []; }
+var tpit = ''; if (tpit) { var itag = new Image(); itag.src = tpit; eplDoc.eplUC.push(itag); }
+if (sinBody) { document.write('</bo'+'dy>'); }
+if (inIframe) { setTimeout("document.close();", 5000); }

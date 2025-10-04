@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Simple Media Party Extension",
+  "version": "1.0.3",
+  "description": "Highlight original phrases on the page from frases-originales.json",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Simple Extension"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["frases-originales.json", "frases-analisis.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

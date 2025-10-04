@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notas de la comunidad</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 420px !important;
+      min-width: 420px !important;
+      min-height: 500px !important;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0e1a 0%, #1a1d29 50%, #2d1b69 100%);
+      color: #e2e8f0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Header Styles */
+    .cyber-header {
+      background: linear-gradient(135deg, #00d4ff 0%, #6c5ce7 50%, #a855f7 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 
+        0 8px 32px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cyber-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* Tab Styles */
+    .cyber-tabs {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cyber-tab {
+      flex: 1;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border: none;
+      background: transparent;
+      color: rgba(226, 232, 240, 0.7);
+    }
+
+    .cyber-tab:hover {
+      background: rgba(0, 212, 255, 0.1);
+      color: #00d4ff;
+      transform: translateY(-1px);
+    }
+
+    .cyber-tab.active {
+      color: #00d4ff;
+      border-bottom: 2px solid #00d4ff;
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    .cyber-tab.active::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, #00d4ff, #6c5ce7);
+      box-shadow: 0 0 10px #00d4ff;
+    }
+
+    /* Panel Styles */
+    .cyber-panel {
+      padding: 20px;
+      overflow-y: auto;
+      height: 440px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      scrollbar-width: thin;
+      scrollbar-color: #00d4ff rgba(255, 255, 255, 0.1);
+    }
+
+    .cyber-panel::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .cyber-panel::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+    }
+
+    .cyber-panel::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #00d4ff, #6c5ce7);
+      border-radius: 3px;
+    }
+
+    .cyber-panel.hidden {
+      display: none;
+    }
+
+    /* Button Styles */
+    .cyber-button {
+      width: 100%;
+      background: linear-gradient(135deg, #00d4ff 0%, #6c5ce7 100%);
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cyber-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px 25px rgba(0, 212, 255, 0.6),
+        0 0 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .cyber-button:active {
+      transform: translateY(0);
+    }
+
+    .cyber-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .cyber-button:hover::before {
+      left: 100%;
+    }
+
+    /* Toggle Styles */
+    .cyber-toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cyber-toggle-container:hover {
+      background: rgba(0, 212, 255, 0.05);
+      border-color: rgba(0, 212, 255, 0.4);
+    }
+
+    .cyber-toggle-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .cyber-toggle {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .cyber-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .cyber-toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .cyber-toggle-slider::before {
+      content: '';
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 2.5px;
+      background: linear-gradient(135deg, #64748b, #94a3b8);
+      border-radius: 50%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .cyber-toggle input:checked + .cyber-toggle-slider {
+      background: linear-gradient(135deg, #00d4ff, #6c5ce7);
+      box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(0, 212, 255, 0.4);
+    }
+
+    .cyber-toggle input:checked + .cyber-toggle-slider::before {
+      transform: translateX(26px);
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .cyber-toggle:hover .cyber-toggle-slider {
+      border-color: rgba(0, 212, 255, 0.5);
+    }
+
+    /* Result Styles */
+    .cyber-results {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cyber-note-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 8px;
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .cyber-note-card:hover {
+      background: rgba(0, 212, 255, 0.08);
+      border-color: rgba(0, 212, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .cyber-note-text {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .cyber-note-author {
+      color: #00d4ff;
+      font-size: 12px;
+      font-weight: 500;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+
+    /* Spacing Utilities */
+    .cyber-space-y > * + * {
+      margin-top: 16px;
+    }
+
+    /* Animation for panels */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cyber-panel.active {
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    /* Additional styles for community notes */
+    .cyber-link-button:hover {
+      text-decoration: underline;
+      color: #6c5ce7;
+      transition: all 0.3s ease;
+    }
+
+    .cyber-avatar {
+      transition: all 0.3s ease;
+    }
+
+    .cyber-avatar:hover {
+      border-color: rgba(0, 212, 255, 0.6);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="cyber-header">
+    📖 New2Trust
+  </header>
+
+  <!-- Tabs -->
+  <div class="cyber-tabs">
+    <button id="tab-detectar" class="cyber-tab active">
+      Detectar
+    </button>
+    <button id="tab-notas" class="cyber-tab">
+      🗒️ Notas de la comunidad
+    </button>
+  </div>
+
+  <!-- Panel Detectar -->
+  <div id="panel-detectar" class="cyber-panel cyber-space-y active">
+    <button id="show-blocks" class="cyber-button">
+      Detectar frases
+    </button>
+
+    <!---<div class="cyber-toggle-container">
+      <span class="cyber-toggle-label">Mostrar resaltados</span>
+      <div class="cyber-toggle">
+        <input type="checkbox" id="toggle-highlights">
+        <div class="cyber-toggle-slider"></div>
+      </div>
+    </div>-->
+
+    <div id="result" class="cyber-results"></div>
+  </div>
+
+  <!-- Panel Notas -->
+  <div id="panel-notas" class="cyber-panel cyber-space-y hidden">
+    <div id="community-notes" class="cyber-results"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
