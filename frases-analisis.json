@@ -1,0 +1,121 @@
+{
+    "analisis": [
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre un decreto del Gobierno relacionado con la celebración del Día de la Niñez, su fecha, ni su justificación en la Convención de los Derechos del Niño.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene ninguna información sobre el decreto 562/2025, la celebración del \"Día del niño\", la Convención de los Derechos del Niño o las sugerencias de la Asamblea General de Naciones Unidas.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto no proporciona información sobre un compromiso específico de Argentina para garantizar “el disfrute del más alto nivel posible de salud y a servicios para el tratamiento de las enfermedades y la rehabilitación”. Si bien menciona aspectos relacionados con la salud, como el aumento de la esperanza de vida, la disponibilidad de tratamientos y el gasto público en salud, no se detalla dicho compromiso.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre una ley de emergencia que el Congreso haya dado media sanción, ni sobre la equiparación salarial del personal pediátrico y residentes al nivel de noviembre de 2022, ni sobre un gasto adicional de $15 mil millones según una Oficina de Presupuesto de la legislatura.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre la Secretaría de Inteligencia de Estado, sus presupuestos, ni los montos específicos mencionados para gastos devengados o reservados.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre una norma aprobada en Diputados que incluya al hospital Garrahan, ni detalles específicos sobre el presupuesto de dicha institución o su comparación con proyecciones gubernamentales.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre un hospital pediátrico ni los montos específicos de $ 196.509 millones, $ 186.097 millones o $ 8.900 millones destinados a dicho hospital.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre el porcentaje de niños, niñas y adolescentes que carecen de cobertura en salud según el Observatorio de la Deuda Social de la UCA, ni menciona la cifra del 35.5%.",
+          "paths": [
+            "demografia.md",
+            "gasto-publico.md",
+            "pobreza.md"
+          ]
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado discute temas relacionados con alimentos, nutrición, agua, salud y tecnología en diversos sectores, pero no contiene información sobre ninguna \"Convención\" que comprometa a los \"Estados parte\" a combatir enfermedades y malnutrición en el marco de la atención primaria de la salud mediante la aplicación de tecnología, alimentos nutritivos y agua potable salubre.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre un informe de la UCA, la insuficiencia alimentaria severa en niños para fines de 2024, ni los porcentajes específicos mencionados (20.5%, pico histórico desde 2010, o la comparación con 2023).",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre la \"inseguridad alimentaria total\" ni el porcentaje del 45,5% mencionado en la sentencia.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado menciona que la pobreza superó el 40% en 2023 e incluso el 50% a principios de 2024, pero no ofrece datos específicos sobre la pobreza monetaria del 38,1% para el general de los argentinos ni del 57,7% para los NNyA en el segundo semestre de 2024.",
+          "paths": [
+            "pobreza.md"
+          ]
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto no proporciona información específica sobre el 12,3% de una población viviendo en indigencia ni el 8,2% de la población en general en condiciones de indigencia para poder verificar la afirmación.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto no proporciona información sobre la cantidad específica de niños y niñas en situación de pobreza en Concordia, Entre Ríos, ni los porcentajes del 68,4% y 75% para los períodos mencionados.",
+          "paths": []
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información sobre los porcentajes de cambio en Gran Salta, Posadas (Misiones) o Gran Catamarca.",
+          "paths": []
+        },
+        {
+          "resultado": "verdad",
+          "respuesta": "De acuerdo con la EPH, la participación del ingreso proveniente de transferencias estatales es decreciente en el nivel de ingresos, constituyendo el 25% del ingreso total para los hogares del 10% más pobre, mientras que aporta menos del 1% de los ingresos de los hogares del 30% de mayores ingresos.",
+          "paths": [
+            "salarios-e-ingresos.md"
+          ]
+        },
+        {
+          "resultado": "falso",
+          "respuesta": "En 2023, el 27,9% de los beneficiarios pertenecían al 10% de los individuos más pobres en la distribución del ingreso antes de las transferencias, no el 14,5%. El 21,8% sí pertenece al 10% siguiente de la distribución.",
+          "paths": [
+            "pobreza.md"
+          ]
+        },
+        {
+          "resultado": "verdad",
+          "respuesta": "Cerca de la mitad de los beneficiarios pertenece al 20% (quintil 1) más pobre de la población, específicamente, en 2023, el 27,9% pertenecía al 10% más pobre y el 21,8% al 10% siguiente de la distribución, sumando casi la mitad.",
+          "paths": [
+            "pobreza.md"
+          ]
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto proporcionado no contiene información que confirme que \"Casi el 40% (39,1%) no cuenta en su vivienda con cloacas, agua corriente o inodoro con descarga\". Si bien se menciona el acceso a saneamiento y retretes con descarga de agua, no se especifica el porcentaje exacto ni la combinación de servicios mencionada en la sentencia.",
+          "paths": [
+            "desigualdad.md"
+          ]
+        },
+        {
+          "resultado": "NA",
+          "respuesta": "El contexto no proporciona información sobre el porcentaje de niños, niñas y adolescentes argentinos que comparten un colchón para dormir.",
+          "paths": []
+        }
+      ]
+  }
+  
+
+  

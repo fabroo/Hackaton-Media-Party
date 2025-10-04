@@ -1,8 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Simple Media Party Extension",
+<<<<<<< HEAD
   "version": "1.0.2",
   "description": "A simple Chrome extension for the Media Party hackathon",
+=======
+  "version": "1.0.3",
+  "description": "Highlight original phrases on the page from frases-originales.json",
+>>>>>>> 360b3439159303a8c1aaeefaf32fe45190ed9158
   "permissions": [
     "activeTab",
     "scripting",
@@ -30,5 +35,15 @@
     "32": "icon32.png",
     "48": "icon48.png",
     "128": "icon128.png"
+<<<<<<< HEAD
   }
+=======
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["frases-originales.json", "frases-analisis.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+>>>>>>> 360b3439159303a8c1aaeefaf32fe45190ed9158
 }
